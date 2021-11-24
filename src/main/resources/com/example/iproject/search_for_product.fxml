@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="pills_table" layoutX="159.0" prefHeight="566.0" prefWidth="766.0">
+        <columns>
+          <TableColumn fx:id="bar_code_col" prefWidth="143.0" text="Bar Code" />
+          <TableColumn fx:id="company_col" prefWidth="129.0" text="Company" />
+            <TableColumn fx:id="product_name_col" prefWidth="175.0" text="Product Name" />
+            <TableColumn fx:id="prescription_col" prefWidth="88.0" text="Prescription" />
+            <TableColumn fx:id="quantity_col" prefWidth="78.0" text="Quantity" />
+            <TableColumn fx:id="price_col" prefWidth="91.0" text="Price" />
+            <TableColumn fx:id="age_col" prefWidth="61.0" text="Min. Age" />
+        </columns>
+      </TableView>
+      <TextField fx:id="med_search_text" layoutY="227.0" prefHeight="25.0" prefWidth="160.0" />
+      <Button fx:id="med_search_button" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="25.0" prefWidth="83.0" text="Search">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutY="174.0" prefHeight="53.0" prefWidth="160.0" text="You can search products by any criteria" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+   </children>
+</AnchorPane>

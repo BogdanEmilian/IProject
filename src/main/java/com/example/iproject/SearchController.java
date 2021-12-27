@@ -10,6 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -53,9 +57,25 @@ public class SearchController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try{
+            Connection conn = DBConnect.connect();
+            String update = "SELECT * FROM pill";
+            Statement st;
+            System.out.println(update);
+            st = conn.createStatement();
+//            st.executeUpdate(update);
+            ResultSet result = st.executeQuery(update);
+            result.getString(1);
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            conn = null;
+        }catch(SQLException s){
+            s.printStackTrace();
+        }
         bar_code_col.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Bar Code"));
-        company_col.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
-        product_name_col.setCellValueFactory(new PropertyValueFactory<Product, String>("active"));
 
         pills_table.getItems().setAll(parseProductList());
     }

@@ -21,7 +21,7 @@ class DBConnect {
             try {
                 connection =
                         DriverManager.getConnection("jdbc:mysql://localhost/pharmacydb?" +
-                                "user=root&password=1976");
+                                "user=root&password=root");
 
             } catch (SQLException ex) {
                 // handle any errors
@@ -93,6 +93,7 @@ public class InsertController {
         }catch(SQLException s){
             s.printStackTrace();
         }
+
     }
 
 }

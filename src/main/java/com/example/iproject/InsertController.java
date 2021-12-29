@@ -89,7 +89,6 @@ public class InsertController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            conn = null;
         }catch(SQLException s){
             s.printStackTrace();
         }

@@ -81,7 +81,6 @@ public class SearchController implements Initializable {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            conn = null;
         }catch(SQLException s){
             s.printStackTrace();
         }

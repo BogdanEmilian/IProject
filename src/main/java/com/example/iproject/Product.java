@@ -8,23 +8,22 @@ public class Product
     private float price;
     private int age;
 
-    public Product(int bar_code, String company, String product_name, String prescription_required, int quantity, float price, int min_age)
-    {
-        this.bar_code = bar_code;
+    public Product(int code, String company, String name, String prescription, int quantity, float price, int age) {
+        this.code = code;
         this.company = company;
-        this.product_name = product_name;
-        this.prescription_required = prescription_required;
+        this.name = name;
+        this.prescription = prescription;
         this.quantity = quantity;
         this.price = price;
-        this.min_age = min_age;
+        this.age = age;
     }
 
-    public int getBar_code() {
-        return bar_code;
+    public int getCode() {
+        return code;
     }
 
-    public void setBar_code(int bar_code) {
-        this.bar_code = bar_code;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getCompany() {
@@ -35,20 +34,20 @@ public class Product
         this.company = company;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getName() {
+        return name;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrescription_required() {
-        return prescription_required;
+    public String getPrescription() {
+        return prescription;
     }
 
-    public void setPrescription_required(String prescription_required) {
-        this.prescription_required = prescription_required;
+    public void setPrescription(String prescription) {
+        this.prescription = prescription;
     }
 
     public int getQuantity() {
@@ -67,11 +66,11 @@ public class Product
         this.price = price;
     }
 
-    public int getMin_age() {
-        return min_age;
+    public int getAge() {
+        return age;
     }
 
-    public void setMin_age(int min_age) {
-        this.min_age = min_age;
+    public void setAge(int age) {
+        this.age = age;
     }
 }

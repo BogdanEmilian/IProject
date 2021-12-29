@@ -2,11 +2,11 @@ package com.example.iproject;
 
 public class Product
 {
-    private int bar_code;
-    private String company, product_name, prescription_required;
+    private int code;
+    private String company, name, prescription;
     private int quantity;
     private float price;
-    private int min_age;
+    private int age;
 
     public Product(int bar_code, String company, String product_name, String prescription_required, int quantity, float price, int min_age)
     {

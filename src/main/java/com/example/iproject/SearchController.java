@@ -1,5 +1,9 @@
 package com.example.iproject;
 
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,9 +18,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SearchController implements Initializable {
 
@@ -57,15 +59,23 @@ public class SearchController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<Product> resultArray = FXCollections.observableArrayList();
         try{
             Connection conn = DBConnect.connect();
             String update = "SELECT * FROM pill";
             Statement st;
-            System.out.println(update);
             st = conn.createStatement();
-//            st.executeUpdate(update);
             ResultSet result = st.executeQuery(update);
-            result.getString(1);
+            while(result.next()) {
+                resultArray.add(new Product(result.getInt("bar_code"),
+                        result.getString("company"),
+                        result.getString("product_name"),
+                        result.getString("prescription_required"),
+                        result.getInt("quantity"),
+                        result.getFloat("price"),
+                        result.getInt("min_age")
+                        ));
+            }
             try {
                 conn.close();
             } catch (SQLException e) {
@@ -75,14 +85,22 @@ public class SearchController implements Initializable {
         }catch(SQLException s){
             s.printStackTrace();
         }
-        bar_code_col.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Bar Code"));
 
-        pills_table.getItems().setAll(parseProductList());
+
+        bar_code_col.setCellValueFactory(new PropertyValueFactory<>("Code"));
+        company_col.setCellValueFactory(new PropertyValueFactory<>("Company"));
+        product_name_col.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        prescription_col.setCellValueFactory(new PropertyValueFactory<>("Prescription"));
+        quantity_col.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
+        price_col.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        age_col.setCellValueFactory(new PropertyValueFactory<>("Age"));
+
+
+        pills_table.setItems(resultArray);
+//        pills_table.getColumns().addAll(bar_code_col, company_col, product_name_col, prescription_col, quantity_col, price_col, age_col);
+
+//        pills_table.getItems().setAll(parseProductList(resultArray));
     }
 
-    private List<Product> parseProductList(){
-        List<Product> productList = new ArrayList<>();
-        return productList;
-    }
 
 }

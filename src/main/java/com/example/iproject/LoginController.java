@@ -47,6 +47,7 @@ public class LoginController {
 
             Stage scene = (Stage) login.getScene().getWindow();
             scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_CREATE_X.getValue(), GUI.SIZE_OF_CREATE_Y.getValue()));
+            scene.setTitle("Create a new account");
         }
         else
             status.setText("You need Administrator privileges to create accounts");
@@ -58,6 +59,7 @@ public class LoginController {
 
         Stage scene = (Stage) login.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LIST_X.getValue(), GUI.SIZE_OF_LIST_Y.getValue()));
+        scene.setTitle("List of products");
     }
 
     @FXML
@@ -66,6 +68,7 @@ public class LoginController {
 
         Stage scene = (Stage) login.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_ADD_X.getValue(), GUI.SIZE_OF_ADD_Y.getValue()));
+        scene.setTitle("Add new products");
     }
 
     @FXML

@@ -90,7 +90,6 @@ public class SearchController implements Initializable {
             }
 
         }catch(SQLException s){
-            s.printStackTrace();
             System.out.println("Something went wrong, please try again or contact the administrator");
         }
 
@@ -111,6 +110,7 @@ public class SearchController implements Initializable {
 
         Stage scene = (Stage) addNew.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_ADD_X.getValue(), GUI.SIZE_OF_ADD_Y.getValue()));
+        scene.setTitle("Add new products");
     }
 
     @FXML
@@ -119,6 +119,7 @@ public class SearchController implements Initializable {
 
         Stage scene = (Stage) backToLogIn.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LOGIN_X.getValue(), GUI.SIZE_OF_LOGIN_Y.getValue()));
+        scene.setTitle("Logging in");
     }
 
 
@@ -145,7 +146,6 @@ public class SearchController implements Initializable {
             }
 
         }catch(SQLException s){
-            s.printStackTrace();
             System.out.println("Something went wrong, please try again or contact the administrator");
         }
 

@@ -60,6 +60,7 @@ public class InsertController {
 
         Stage scene = (Stage) login.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LIST_X.getValue(), GUI.SIZE_OF_LIST_Y.getValue()));
+        scene.setTitle("List of products");
     }
 
     @FXML
@@ -68,6 +69,7 @@ public class InsertController {
 
         Stage scene = (Stage) login.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LOGIN_X.getValue(), GUI.SIZE_OF_LOGIN_Y.getValue()));
+        scene.setTitle("Logging in");
     }
 
     @FXML

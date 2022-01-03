@@ -43,6 +43,7 @@ public class CreateAccountController {
 
         Stage scene = (Stage) login.getScene().getWindow();
         scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LOGIN_X.getValue(), GUI.SIZE_OF_LOGIN_Y.getValue()));
+        scene.setTitle("Logging in");
     }
 
     @FXML
@@ -58,11 +59,6 @@ public class CreateAccountController {
             st = conn.createStatement();
             st.executeUpdate(update);
 
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }catch(SQLException s){
             status.setText("The username already exists, please try another");
         }

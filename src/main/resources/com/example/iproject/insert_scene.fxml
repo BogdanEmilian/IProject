@@ -38,5 +38,8 @@
             </FXCollections>
          </items>
       </ChoiceBox>
+      <Label fx:id="status" alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="255.0" textAlignment="CENTER" />
+      <Button fx:id="login" layoutX="64.0" layoutY="299.0" mnemonicParsing="false" onAction="#goToLogIn" text="Log In" />
+      <Button fx:id="listOfItems" layoutX="160.0" layoutY="299.0" mnemonicParsing="false" onAction="#goToList" text="List of items" />
    </children>
 </AnchorPane>

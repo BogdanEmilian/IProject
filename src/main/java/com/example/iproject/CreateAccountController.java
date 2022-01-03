@@ -39,11 +39,11 @@ public class CreateAccountController {
 
     @FXML
     void changeToLogin(ActionEvent event) throws IOException{
-            Parent fxmlLoader = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("login.fxml"));
 
-            Stage scene = (Stage) login.getScene().getWindow();
-            scene.setScene(new Scene(fxmlLoader, 400, 350));
-        }
+        Stage scene = (Stage) login.getScene().getWindow();
+        scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LOGIN_X.getValue(), GUI.SIZE_OF_LOGIN_Y.getValue()));
+    }
 
     @FXML
     void onCreate(ActionEvent event) {

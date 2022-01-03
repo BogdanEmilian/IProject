@@ -43,16 +43,33 @@
                </HBox.margin>
             </Button>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </HBox>
       <Label fx:id="status">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="newAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeToCreate" text="Create a new accout">
-         <VBox.margin>
-            <Insets right="20.0" />
-         </VBox.margin>
-      </Button>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="newAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeToCreate" text="Create a new accout">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="listOfItems" mnemonicParsing="false" onAction="#goToList" text="List of items">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="addNewItems" mnemonicParsing="false" onAction="#addItems" text="Add new items">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </VBox>

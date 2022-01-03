@@ -2,9 +2,16 @@ package com.example.iproject;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.*;
 
 import java.sql.Connection;
@@ -12,32 +19,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-class DBConnect {
-
-    private static Connection connection;
-
-    public static Connection connect() {
-        if (connection == null) {
-            try {
-                connection =
-                        DriverManager.getConnection("jdbc:mysql://localhost/pharmacydb?" +
-                                "user=root&password=root");
-
-            } catch (SQLException ex) {
-                // handle any errors
-                System.out.println("SQLException: " + ex.getMessage());
-                System.out.println("SQLState: " + ex.getSQLState());
-                System.out.println("VendorError: " + ex.getErrorCode());
-            }
-        }
-
-        return connection;
-    }
-}
-
 public class InsertController {
-
-
 
     @FXML
     private TextField bar_code_text;
@@ -64,6 +46,31 @@ public class InsertController {
     private TextField quantity_text;
 
     @FXML
+    private Label status;
+
+    @FXML
+    private Button listOfItems;
+
+    @FXML
+    private Button login;
+
+    @FXML
+    void goToList(ActionEvent event) throws IOException {
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("search_for_product.fxml"));
+
+        Stage scene = (Stage) login.getScene().getWindow();
+        scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LIST_X.getValue(), GUI.SIZE_OF_LIST_Y.getValue()));
+    }
+
+    @FXML
+    void goToLogIn(ActionEvent event) throws IOException{
+        Parent fxmlLoader = FXMLLoader.load(getClass().getResource("login.fxml"));
+
+        Stage scene = (Stage) login.getScene().getWindow();
+        scene.setScene(new Scene(fxmlLoader, GUI.SIZE_OF_LOGIN_X.getValue(), GUI.SIZE_OF_LOGIN_Y.getValue()));
+    }
+
+    @FXML
     void onEnterValuesButton(ActionEvent event) {
         try{
             Connection conn = DBConnect.connect();
@@ -80,13 +87,8 @@ public class InsertController {
             st = conn.createStatement();
             st.executeUpdate(update);
 
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }catch(SQLException s){
-            s.printStackTrace();
+            status.setText("Please check if all the text fields are entered correctly");
         }
 
     }

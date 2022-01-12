@@ -55,8 +55,11 @@
             </VBox>
             <Button fx:id="login" alignment="CENTER" mnemonicParsing="false" onAction="#onCreate" text="Create">
                <HBox.margin>
-                  <Insets left="70.0" top="82.0" />
+                  <Insets left="70.0" top="50.0" />
                </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Button>
          </children>
       </HBox>

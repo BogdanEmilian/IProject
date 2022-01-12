@@ -21,13 +21,13 @@
             <TableColumn fx:id="age_col" prefWidth="61.0" text="Min. Age" />
         </columns>
       </TableView>
-      <TextField fx:id="med_search_text" layoutY="227.0" prefHeight="25.0" prefWidth="160.0" />
-      <Button fx:id="med_search_button" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="25.0" prefWidth="83.0" text="Search">
+      <TextField fx:id="med_search_text" layoutY="227.0" onKeyPressed="#onSearchKeyPressed" prefHeight="25.0" prefWidth="160.0" />
+      <Button fx:id="textFieldClear" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" onAction="#onTextFieldClear" prefHeight="25.0" prefWidth="83.0" text="Clear">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label alignment="BOTTOM_LEFT" layoutY="174.0" prefHeight="53.0" prefWidth="160.0" text="Search for the product name:" textOverrun="CLIP" wrapText="true" />
+      <Label alignment="BOTTOM_LEFT" layoutY="174.0" prefHeight="53.0" prefWidth="160.0" text="Search for product identifiers" textOverrun="CLIP" wrapText="true" />
       <Button fx:id="backToLogIn" layoutX="38.0" layoutY="458.0" mnemonicParsing="false" onAction="#goToLogIn" text="Back to Log In" />
       <Button fx:id="addNew" layoutX="23.0" layoutY="405.0" mnemonicParsing="false" onAction="#goToInsert" text="Add new products" />
    </children>

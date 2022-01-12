@@ -11,23 +11,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iproject.InsertController">
    <children>
-      <Label alignment="CENTER" layoutX="223.0" layoutY="-1.0" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: lightGray;" text="Add new medication" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="enter_values_button" layoutX="449.0" layoutY="190.0" mnemonicParsing="false" onAction="#onEnterValuesButton" text="Enter Values">
          <font>
-            <Font name="Arial" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="enter_values_button" layoutX="424.0" layoutY="299.0" mnemonicParsing="false" onAction="#onEnterValuesButton" text="Enter Values" />
-      <TextField fx:id="bar_code_text" layoutX="15.0" layoutY="82.0" />
-      <TextField fx:id="company_text" layoutX="15.0" layoutY="135.0" />
+            <Font size="15.0" />
+         </font></Button>
+      <TextField fx:id="bar_code_text" layoutX="15.0" layoutY="82.0" promptText="213435" />
+      <TextField fx:id="company_text" layoutX="15.0" layoutY="135.0" promptText="Pfizer" />
       <Label layoutX="14.0" layoutY="65.0" text="Bar Code" />
       <Label layoutX="15.0" layoutY="118.0" text="Company" />
-      <TextField fx:id="product_name_text" layoutX="213.0" layoutY="82.0" />
+      <TextField fx:id="product_name_text" layoutX="213.0" layoutY="82.0" promptText="Vitamins" />
       <Label layoutX="213.0" layoutY="65.0" text="Product Name" />
       <Label layoutX="15.0" layoutY="176.0" text="Prescription Required" />
-      <TextField fx:id="quantity_text" layoutX="213.0" layoutY="135.0" />
+      <TextField fx:id="quantity_text" layoutX="213.0" layoutY="135.0" promptText="40" />
       <Label layoutX="213.0" layoutY="118.0" text="Quantity" />
-      <TextField fx:id="price_text" layoutX="424.0" layoutY="82.0" />
-      <TextField fx:id="minimum_age_text" layoutX="424.0" layoutY="135.0" />
+      <TextField fx:id="price_text" layoutX="424.0" layoutY="82.0" promptText="5.23" />
+      <TextField fx:id="minimum_age_text" layoutX="424.0" layoutY="135.0" promptText="14" />
       <Label layoutX="424.0" layoutY="65.0" text="Price" />
       <Label layoutX="424.0" layoutY="118.0" text="Minimum Age" />
       <ChoiceBox fx:id="prescription_text" layoutX="15.0" layoutY="193.0" prefWidth="150.0" value="Not Required">

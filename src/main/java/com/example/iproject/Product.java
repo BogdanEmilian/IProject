@@ -1,6 +1,10 @@
 package com.example.iproject;
 
-public class Product
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Product implements Meds
 {
     private int code;
     private String company, name, prescription;
@@ -72,5 +76,20 @@ public class Product
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public void setQuantity(int barcode, int quantity) {
+        try {
+            Connection conn = DBConnect.connect();
+            String update = "UPDATE pill SET quantity=" + quantity + " WHERE bar_code=" + barcode + ";";
+            Statement st;
+            System.out.println(update);
+            st = conn.createStatement();
+            st.executeUpdate(update);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

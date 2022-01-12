@@ -28,19 +28,22 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="username" maxWidth="200.0" prefHeight="25.0" prefWidth="296.0" />
+                  <TextField fx:id="username" maxWidth="200.0" onKeyPressed="#onEnterLogin" prefHeight="25.0" prefWidth="296.0" />
                   <Label text="Password">
                      <padding>
                         <Insets top="15.0" />
                      </padding>
                   </Label>
-                  <PasswordField fx:id="password" maxWidth="200.0" />
+                  <PasswordField fx:id="password" maxWidth="200.0" onKeyPressed="#onEnterLogin" />
                </children>
             </VBox>
             <Button fx:id="login" alignment="CENTER" mnemonicParsing="false" onAction="#onLogIn" text="Log In">
                <HBox.margin>
                   <Insets bottom="50.0" left="70.0" top="45.0" />
                </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Button>
          </children>
          <VBox.margin>
